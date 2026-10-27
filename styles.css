@@ -164,9 +164,9 @@ body {
     background-color: var(--theme-grey);
     grid-column-start: 2;
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1% 99%;
     padding: 1rem;
+    padding-bottom: 2rem;
     height: 100%;
     gap: 1rem;
 }
@@ -174,24 +174,55 @@ body {
 .projects-container {
     display: grid;
     height: 100%;
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: 0.1fr 2fr 2fr 2fr;
-    gap: 1rem;
+    gap: 2rem;
     grid-row: span 2;
 }
 
-#your-projects {
-    grid-column: span 2;
+.project-headers {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.project-contents {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.project-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-right: 1rem;
+}
+
+.project-right {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 1.5rem;
+}
+
+.trending-section {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0.25rem;
+}
+
+#announcements {
+    grid-column-start: -2;
 }
 
 .project {
     border-left: var(--theme-yellow) 5px solid;
     background-color: white;
     border-radius: 5px;
-    padding: 2rem 1.5rem 1rem;
-    grid-template-rows: 1fr 3fr 1fr;
-    grid-template-columns: 1fr;
+    padding: 1.5rem 1.5rem 0;
     display: grid;
+    grid-template-rows: 1fr 4fr 2fr;
+}
+
+.project-title {
+    margin-bottom: 0;
 }
 
 .project>* {
@@ -210,6 +241,10 @@ body {
     grid-column-start: 2;
 }
 
+.project-text {
+    align-self: top;
+}
+
 .action-svg {
     margin-left: 1rem;
 }
@@ -223,7 +258,9 @@ body {
 
 .announcement {
     border-bottom: 1px solid lightgrey;
-    padding: 1rem
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: 0.1fr 1fr
 }
 
 .announcement:first-child {
@@ -254,10 +291,12 @@ body {
     grid-template-rows: 1fr 1fr;
 }
 
-.trending-username>* {
+.trending-username>*,
+.project-text {
     font-size: 0.8rem;
 }
 
-.user-text {
+.user-text,
+.project-text {
     color: gray;
 }
