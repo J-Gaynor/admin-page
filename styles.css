@@ -184,8 +184,31 @@ body {
 }
 
 .project {
-    border: black 1px solid;
+    border-left: var(--theme-yellow) 5px solid;
+    background-color: white;
     border-radius: 5px;
+    padding: 2rem 1.5rem 1rem;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-columns: 1fr;
+    display: grid;
 }
 
-.trending-section {}
+.project>* {
+    grid-column: span 2;
+}
+
+.action-svg {
+    fill: black;
+    width: 1.5rem;
+    justify-self: end;
+}
+
+.project-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-start: 2;
+}
+
+.action-svg {
+    margin-left: 1rem;
+}
